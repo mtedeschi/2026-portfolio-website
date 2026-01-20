@@ -1,36 +1,227 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js + Tailwind CSS + shadcn/ui Project
 
-## Getting Started
+A modern React application built with Next.js 16, Tailwind CSS v4, and shadcn/ui components.
 
-First, run the development server:
+## 🚀 Tech Stack
+
+- **Next.js 16.1.4** - React framework with App Router
+- **React 19.2.3** - UI library
+- **TypeScript 5** - Type safety
+- **Tailwind CSS v4** - Utility-first CSS framework
+- **shadcn/ui** - High-quality component library
+- **ESLint** - Code linting
+
+## 📋 Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- **Node.js** 20.17.0 or higher (or 22.9.0+)
+- **npm** 10.2.4 or higher (or use yarn/pnpm/bun)
+
+## 🛠️ Setup Instructions
+
+### 1. Install Dependencies
+
+If you haven't already installed the dependencies, run:
+
+```bash
+npm install
+```
+
+This will install all required packages including:
+- Next.js and React
+- Tailwind CSS and PostCSS
+- shadcn/ui dependencies (class-variance-authority, clsx, tailwind-merge, lucide-react)
+- TypeScript and type definitions
+- ESLint configuration
+
+### 2. Run the Development Server
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see your application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The page will automatically reload when you make changes to the code.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Build for Production
 
-## Learn More
+Create an optimized production build:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 4. Start Production Server
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+After building, start the production server:
 
-## Deploy on Vercel
+```bash
+npm start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 5. Lint Your Code
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Run ESLint to check for code quality issues:
+
+```bash
+npm run lint
+```
+
+## 📁 Project Structure
+
+```
+mtedeschi/
+├── src/
+│   ├── app/              # Next.js App Router pages
+│   │   ├── layout.tsx    # Root layout
+│   │   ├── page.tsx      # Home page
+│   │   └── globals.css   # Global styles with Tailwind and shadcn variables
+│   ├── components/       # React components
+│   │   └── ui/          # shadcn/ui components (add components here)
+│   └── lib/
+│       └── utils.ts     # Utility functions (cn helper for className merging)
+├── public/              # Static assets
+├── components.json      # shadcn/ui configuration
+├── tsconfig.json       # TypeScript configuration
+├── next.config.ts      # Next.js configuration
+├── postcss.config.mjs  # PostCSS configuration
+└── package.json        # Dependencies and scripts
+```
+
+## 🎨 Using shadcn/ui Components
+
+### Adding Components
+
+To add shadcn/ui components to your project, use the CLI:
+
+```bash
+npx shadcn@latest add [component-name]
+```
+
+For example:
+
+```bash
+npx shadcn@latest add button
+npx shadcn@latest add card
+npx shadcn@latest add dialog
+```
+
+### Available Component Aliases
+
+The project is configured with the following import aliases:
+
+- `@/components` - Your custom components
+- `@/components/ui` - shadcn/ui components
+- `@/lib` - Utility functions
+- `@/lib/utils` - Utility functions (includes `cn` helper)
+- `@/hooks` - Custom React hooks
+
+### Example Usage
+
+```tsx
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
+import { cn } from "@/lib/utils"
+
+export default function MyComponent() {
+  return (
+    <Card>
+      <Button className={cn("mt-4")}>
+        Click me
+      </Button>
+    </Card>
+  )
+}
+```
+
+## 🎨 Tailwind CSS Configuration
+
+This project uses **Tailwind CSS v4** with the new `@import` syntax. The configuration is in `src/app/globals.css`.
+
+### Customization
+
+- **Colors**: Modify CSS variables in `globals.css` (both light and dark mode)
+- **Fonts**: Configured via Next.js font optimization
+- **Border Radius**: Customizable via `--radius` CSS variable
+
+### Dark Mode
+
+Dark mode is supported via the `.dark` class. The theme variables are automatically configured for both light and dark modes.
+
+## 📦 Key Dependencies
+
+### Production Dependencies
+
+- `next` - Next.js framework
+- `react` & `react-dom` - React library
+- `class-variance-authority` - Component variant management
+- `clsx` - Conditional className utility
+- `tailwind-merge` - Merge Tailwind classes intelligently
+- `lucide-react` - Icon library (used by shadcn/ui)
+
+### Development Dependencies
+
+- `typescript` - TypeScript compiler
+- `@types/node`, `@types/react`, `@types/react-dom` - Type definitions
+- `tailwindcss` - Tailwind CSS
+- `@tailwindcss/postcss` - PostCSS plugin for Tailwind
+- `eslint` & `eslint-config-next` - Linting
+- `tw-animate-css` - Animation utilities
+
+## 🔧 Configuration Files
+
+- **`components.json`** - shadcn/ui configuration (style: new-york, baseColor: neutral)
+- **`tsconfig.json`** - TypeScript compiler options with path aliases
+- **`next.config.ts`** - Next.js configuration
+- **`postcss.config.mjs`** - PostCSS configuration for Tailwind
+
+## 🚀 Deployment
+
+### Deploy to Vercel
+
+The easiest way to deploy is using [Vercel](https://vercel.com):
+
+1. Push your code to GitHub
+2. Import your repository in Vercel
+3. Vercel will automatically detect Next.js and configure the build
+
+### Other Platforms
+
+Next.js can be deployed to any platform that supports Node.js:
+
+- **Netlify** - Configure build command: `npm run build`
+- **AWS Amplify** - Automatic Next.js detection
+- **Docker** - Use the official Next.js Docker image
+
+## 📚 Learn More
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [shadcn/ui Documentation](https://ui.shadcn.com)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs)
+
+## 🐛 Troubleshooting
+
+### npm cache issues
+
+If you encounter npm cache permission errors, run:
+
+```bash
+sudo chown -R $(whoami) ~/.npm
+```
+
+### Port already in use
+
+If port 3000 is already in use, Next.js will automatically use the next available port (3001, 3002, etc.).
+
+### Component not found
+
+Make sure you've added the component using `npx shadcn@latest add [component-name]` before importing it.
+
+## 📝 License
+
+This project is private and proprietary.
