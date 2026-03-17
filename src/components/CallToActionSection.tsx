@@ -12,10 +12,10 @@ export function CallToActionSection() {
           id="cta-heading"
           className="text-[clamp(2.25rem,8.5vw,5rem)] font-bold leading-[1.1] tracking-tight"
         >
-          Let's Work Together
+          Let's work together
         </h2>
         <p className="text-[clamp(1rem,2.5vw,1.25rem)] text-muted-foreground leading-relaxed">
-          If you're exploring how AI fits into your business, struggling to move from idea to execution, or need experienced leadership to guide the way—I'd love to talk.
+          If you're exploring how AI fits into your business, struggling to move from idea to execution, or need experienced design leadership to guide the way—I'd love to talk.
         </p>
         <div className="pt-[clamp(0.5rem,2vw,1rem)]">
           <Button asChild size="lg" className="text-[clamp(0.875rem,2vw,1rem)] h-[clamp(2.75rem,7vw,3.5rem)] px-[clamp(1.5rem,4vw,2rem)]">
