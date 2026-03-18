@@ -1,7 +1,13 @@
 import { notFound } from "next/navigation"
 import { getProject, getProjectsList } from "@/data/projects"
+import {
+  isCaseStudyPasswordProtected,
+  CASE_STUDY_GATE_PASSWORD,
+  UNLOCK_TTL_MS,
+} from "@/data/projectPasswordGate"
 import { CountUpNumber } from "@/components/CountUpNumber"
 import { ProjectGalleryCarousel } from "@/components/ProjectGalleryCarousel"
+import { ProjectPasswordGate } from "@/components/ProjectPasswordGate"
 
 interface ProjectPageProps {
   params: Promise<{ id: string }>
@@ -18,8 +24,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   if (!project) notFound()
 
   return (
-    <>
-      {/* Hero: subtitle (client), title, tags + particle shape */}
+    <ProjectPasswordGate
+      projectId={id}
+      isPasswordProtected={isCaseStudyPasswordProtected(id)}
+      expectedPassword={CASE_STUDY_GATE_PASSWORD}
+      unlockTtlMs={UNLOCK_TTL_MS}
+    >
+      <>
+        {/* Hero: subtitle (client), title, tags + particle shape */}
       <section
         data-particle-shape={project.particleShape}
         className="w-full pt-[120px] md:pt-0 md:min-h-[100dvh] flex items-center px-[clamp(2rem,8vw,4rem)] animate-in-view"
@@ -141,6 +153,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
         </div>
       </section>
-    </>
+      </>
+    </ProjectPasswordGate>
   )
 }

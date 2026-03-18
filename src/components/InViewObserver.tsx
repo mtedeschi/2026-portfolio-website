@@ -42,8 +42,15 @@ export function InViewObserver() {
     const timeout = requestAnimationFrame(() => {
       requestAnimationFrame(observe)
     })
+
+    const onReobserve = () => {
+      observe()
+    }
+    window.addEventListener("reobserve-in-view", onReobserve)
+
     return () => {
       cancelAnimationFrame(timeout)
+      window.removeEventListener("reobserve-in-view", onReobserve)
       observer.disconnect()
     }
   }, [pathname])

@@ -1,7 +1,13 @@
+"use client"
+
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 
 export function CallToActionSection() {
+  const pathname = usePathname()
+  if (pathname === "/contact") return null
+
   return (
     <section
       className="w-full min-h-dvh flex items-center justify-center px-[clamp(2rem,8vw,4rem)] py-[clamp(4rem,12vw,8rem)] animate-in-view"

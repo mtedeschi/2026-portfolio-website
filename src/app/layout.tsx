@@ -25,6 +25,18 @@ const leagueGothic = League_Gothic({
 export const metadata: Metadata = {
   title: "Mike Tedeschi - AI-First Design, Product, and Tech Leadership",
   description: "Portfolio of Mike Tedeschi - Design, Product, and Technology Leadership",
+  manifest: "/favicon/site.webmanifest",
+  icons: {
+    icon: [
+      { url: "/favicon/favicon.ico", sizes: "any" },
+      { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/favicon/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
 };
 
 export default function RootLayout({

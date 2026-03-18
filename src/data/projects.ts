@@ -263,11 +263,10 @@ const projects: Project[] = [
     ],
     image: "/images/pods/pods_card_background.jpg",
     galleryImages: [
-      "/images/pods/pods_card_background.jpg",
-      "/images/pods/pods_card_background.jpg",
-      "/images/pods/pods_card_background.jpg",
-      "/images/pods/pods_card_background.jpg",
-      "/images/pods/pods_card_background.jpg",
+      "/images/pods/PODS_01.jpg",
+      "/images/pods/PODS_02.jpg",
+      "/images/pods/PODS_03.jpg",
+      "/images/pods/PODS_09.jpg",
     ],
     particleShape: "lightbulb",
     summarySection: {
@@ -292,11 +291,11 @@ const projects: Project[] = [
       text: "The core issue wasn't just outdated interfaces—it was a disconnected system. We reframed the problem around a single goal: create a unified, end-to-end customer and agent experience across all channels.<br/><br/>We reimagined the full quote-to-cash journey—from research to fulfillment and service; developed personas and journey maps across residential and commercial segments; redesigned the experience across web and agent-facing systems within Salesforce; standardized and simplified workflows to reduce friction and eliminate redundancy; and integrated critical systems (Salesforce, PROS pricing, Sitecore) to enable real-time data access..<br/><br/>We reduced reliance on \"swivel chair\" workflows by connecting previously siloed systems. The transformation focused on making the system work for both customers and agents—reducing friction at every step.",
     },
     solutionGalleryImages: [
-      "/images/pods/pods_card_background.jpg",
-      "/images/pods/pods_card_background.jpg",
-      "/images/pods/pods_card_background.jpg",
-      "/images/pods/pods_card_background.jpg",
-      "/images/pods/pods_card_background.jpg",
+      "/images/pods/PODS_04.jpg",
+      "/images/pods/PODS_05.jpg",
+      "/images/pods/PODS_06.jpg",
+      "/images/pods/PODS_07.jpg",
+      "/images/pods/PODS_08.jpg",
     ],
     impactSection: {
       subtitle: "Outcomes",
@@ -325,46 +324,61 @@ const projects: Project[] = [
   {
     id: "ey",
     client: "Ernst & Young",
-    title: "AI-enabled design lifecycle transformation and tool experimentation",
-    summary: "AI-enabled design lifecycle transformation and tool experimentation at EY.",
-    tags: ["AI", "Design Operations", "Tooling"],
+    title: "EY Studio+ AI Lab Design & Delivery Transformation",
+    summary:
+      "Created and led EY’s AI Lab to operationalize AI across design and delivery—aligning teams, defining workflows, and enabling scalable, AI-driven ways of working.",
+    tags: ["AI Enablement", "Design & Delivery", "Operating Model", "Tooling Strategy"],
     image: "/images/ey/ey_card_background.jpg",
     galleryImages: [
-      "/images/ey/ey_card_background.jpg",
+      "/images/ey/EY_01.jpg",
+      "/images/ey/EY_02.jpg",
+      "/images/ey/EY_03.jpg",
+      "/images/ey/EY_04.jpg",
     ],
     particleShape: "bot",
     summarySection: {
       subtitle: "Overview",
-      title: "Design at scale with AI",
-      text: "EY’s design organization needed to scale delivery and consistency while exploring how AI could augment the design lifecycle. We led strategy and experimentation for AI-enabled design tools and processes.",
+      title: "Moving from experimentation to scalable AI-enabled delivery",
+      text: "As AI rapidly entered the design and product space, EY’s Design Studio faced a familiar challenge: high interest, fragmented experimentation, and no clear path to scale. Teams were exploring tools independently, but without a shared strategy, it was unclear which tools to adopt, how they fit into delivery, or how to communicate their value to clients.<br/><br/>I initiated and led the creation of an AI Lab to unify these efforts—moving from experimentation to a structured, scalable approach that could reshape how the organization sells and delivers work.",
     },
     myRoleSection: {
       subtitle: "My Role",
-      title: "Strategy and experimentation",
-      text: "I led discovery, roadmap definition, and pilot design for AI tools in the design lifecycle, working with design, engineering, and risk to align on use cases and guardrails.",
+      title: "Led the AI Lab from concept through execution",
+      text: "I led the AI Lab from concept through execution, defining the strategy, tooling, and operating model for AI-enabled design and delivery. This included aligning leadership, evaluating tools, and designing new ways of working that could be adopted across the organization.",
       numbers: [
-        { value: 4, caption: "Pilot tools evaluated" },
-        { value: 10, caption: "Design teams in pilot" },
-        { value: 1, caption: "Design lifecycle model aligned" },
+        { value: 80, caption: "Design Studio designers impacted" },
+        { value: 1500, caption: "Studio+ team members influenced" },
+        { value: 50, caption: "AI tools evaluated across use cases" },
+        { value: 8, caption: "Strategic tools selected for adoption" },
+        { value: 3, caption: "Structured experimentation cycles ran" },
+        { value: 6, caption: "Core delivery flows redefined" },
       ],
     },
     solutionSection: {
       subtitle: "Solution",
-      title: "Pilots and governance",
-      text: "We defined a design lifecycle model and ran structured pilots for AI-assisted research, concepting, and delivery. Governance and quality checks were built in so teams could experiment safely.",
+      title: "Tooling with intent, process flows, and practical enablement",
+      text: "The core issue wasn’t lack of interest in AI—it was lack of structure. We grounded the effort in a simple belief: AI only creates value when it’s embedded into how work is sold and delivered.<br/><br/>From that, we evaluated and curated a focused set of tools aligned to real use cases, supported by “battle cards” that clarified when and how each tool should be used, analyzed historical project data and used AI (Copilot) to identify common delivery patterns, then defined six standardized process flows—mapping how staffing, timelines, and outputs change in an AI-enabled model, and created reusable materials for internal teams and client conversations—equipping teams to explain how AI changes delivery, value, and cost with confidence.<br/><br/>To avoid hype, we introduced a confidence-based framework—grounding every projection in how likely it was to deliver real impact.",
     },
     impactSection: {
       subtitle: "Outcomes",
-      title: "Outcome",
-      text: "The organization adopted a shared view of the design lifecycle and selected AI tools for broader rollout based on pilot results.",
+      title: "Alignment that enabled scalable adoption",
+      text: "The AI Lab shifted the organization from experimentation to alignment—establishing a clear shared approach to AI-enabled delivery, enabling adoption of new tools in a complex enterprise environment, and reducing friction in sales by giving teams a structured way to talk about AI.",
       blocks: [
         {
-          title: "Clear use cases",
-          body: "We identified where AI could meaningfully accelerate work without compromising quality or consistency.",
+          title: "Shared approach to AI-enabled delivery",
+          body: "Established a clear, coordinated, and repeatable way to deliver AI-enabled work across teams—so adoption wasn’t dependent on individual experimentation.",
         },
         {
-          title: "Safe experimentation",
-          body: "Pilots were run with clear scope and success criteria, so the organization could learn and scale what worked.",
+          title: "Reduced sales friction with confidence-based enablement",
+          body: "Enabled teams to communicate AI value to clients with reusable materials and “battle cards,” improving internal confidence and strengthening client conversations.",
+        },
+        {
+          title: "Upskilling and learning priorities",
+          body: "Informed upskilling and learning priorities across the Studio+ ecosystem, ensuring teams built capability as tools and workflows evolved.",
+        },
+        {
+          title: "From isolated tasks to AI-augmented systems",
+          body: "Changed how teams think about their work—from disconnected tool usage to AI-augmented delivery systems connected to proposals, staffing, and outcomes.",
         },
       ],
     },
@@ -376,12 +390,25 @@ export function getProject(id: string): Project | undefined {
 }
 
 export function getProjectsList(): Pick<Project, "id" | "client" | "title" | "summary" | "tags" | "image">[] {
-  return projects.map(({ id, client, title, summary, tags, image }) => ({
-    id,
-    client,
-    title,
-    summary,
-    tags,
-    image,
-  }))
+  // Controls homepage carousel order without affecting individual project pages.
+  const carouselOrder = ["nvidia", "solventum", "ey", "pods", "worldbank"]
+  const byId = new Map(projects.map((p) => [p.id, p] as const))
+
+  const orderedProjects = carouselOrder
+    .map((id) => byId.get(id))
+    .filter((p): p is Project => Boolean(p))
+
+  // If more projects are added later, keep them after the explicit order.
+  const restProjects = projects.filter((p) => !carouselOrder.includes(p.id))
+
+  return [...orderedProjects, ...restProjects].map(
+    ({ id, client, title, summary, tags, image }) => ({
+      id,
+      client,
+      title,
+      summary,
+      tags,
+      image,
+    }),
+  )
 }
