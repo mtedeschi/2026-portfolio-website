@@ -15,6 +15,7 @@ const navigationItems = [
   { label: "Services", href: "/services" },
   { label: "AI Orchestration Sprint", href: "/services#ai-orchestration", inset: true },
   { label: "Concept to Execution Sprint", href: "/services#concept-to-execution", inset: true },
+  { label: "This Week in AI", href: "/insights" },
   { label: "Work with me", href: "/contact" },
 ]
 
