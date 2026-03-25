@@ -33,7 +33,7 @@ const BLOG_POSTS: BlogPost[] = [
       "This week: hiring is changing, education is evolving, and policies are shaping the future.",
     tags: ["Jobs", "Design", "Policy", "Education"],
     image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80",
+      "/images/insights/2026-03-23_thumb.jpg",
     quickSummary:
       "This week, the pattern is less “acceleration” and more “tension.” AI is showing real capability and ways it’s changing how we live, learn, and work, but also exposing gaps in the systems we take for granted.",
     substackUrl: "https://miketedeschi.substack.com/p/march-23-2026-this-week-in-ai",
