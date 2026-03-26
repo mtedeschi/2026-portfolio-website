@@ -195,9 +195,9 @@ const projects: Project[] = [
   {
     id: "worldbank",
     client: "The World Bank",
-    title: "Global road safety platform from concept to launch",
+    title: "Global road safety platform from concept to global deployment",
     summary:
-      "Led experience strategy and platform design for the World Bank’s global road safety data initiative, improving transportation safety outcomes worldwide.",
+      "Led the end-to-end design of the World Bank's DRIVER platform, enabling governments across 13+ countries to use data and predictive modeling to reduce traffic accidents and save lives.",
     tags: [
       "Platform Design",
       "Product Strategy",
@@ -206,47 +206,56 @@ const projects: Project[] = [
     ],
     image: "/images/worldbank/worldbank_card_background.jpg",
     galleryImages: [
-      "/images/worldbank/worldbank_card_background.jpg",
+      "/images/worldbank/DRIVER_01.jpg",
+      "/images/worldbank/DRIVER_04.jpg",
+      "/images/worldbank/DRIVER_03.jpg",
+      "/images/worldbank/DRIVER_02.jpg",
     ],
     particleShape: "earth",
     summarySection: {
       subtitle: "Overview",
-      title: "Data for safer roads",
-      text: "The World Bank’s road safety initiative needed a platform to collect, analyze, and share road safety data across countries. We led experience strategy and platform design from concept through launch.",
+      title: "From fragmented data to life-saving decisions",
+      text: "Road traffic accidents are one of the leading causes of death globally, particularly in developing regions where data is fragmented, inconsistent, or not captured at all. Without reliable data, governments struggle to identify high-risk areas (\"blackspots\") or justify investments in infrastructure and policy changes.<br/><br/>The World Bank's Global Road Safety Facility (GRSF) set out to change this by developing DRIVER, an open platform designed to help governments and organizations track, analyze, and reduce traffic-related fatalities. This wasn't just a data problem. It was a systems problem spanning countries, agencies, and on-the-ground realities, with the potential to directly impact human lives.",
     },
     myRoleSection: {
       subtitle: "My Role",
-      title: "Experience strategy and design",
-      text: "I led user research, experience strategy, and end-to-end platform design, working with technical and policy teams to align the product with real-world workflows and reporting needs.",
+      title: "Lead UI/UX from concept through rollout",
+      text: "I served as Lead UI/UX Designer, owning product direction from early concept through global deployment. This included defining the product vision, conducting research across multiple countries, prototyping and validating solutions, designing the full platform experience, and building the front-end foundation for implementation.<br/><br/>This was not a prototype. It was a product deployed and used globally.",
       numbers: [
-        { value: 15, caption: "Countries in pilot" },
-        { value: 6, caption: "Months to first release" },
-        { value: 100, caption: "Data points per country (target)" },
+        { value: 10, caption: "Core team members collaborating with stakeholders and government users" },
+        { value: 15, caption: "Pilots implemented across 13+ countries" },
+        { value: 16, caption: "Government organizations engaged in the initial pilot" },
+        { value: 4500, caption: "Users trained globally" },
+        { value: 13, caption: "Countries reached, with multilingual and RTL-ready design" },
       ],
     },
     solutionSection: {
       subtitle: "Solution",
-      title: "Research-driven platform design",
-      text: "We designed a platform that supported data entry, validation, and reporting for diverse country contexts—with clear governance and accessibility. Rapid prototyping and user testing kept the product aligned with stakeholder needs.",
+      title: "Standardize data to unlock action",
+      text: "The core challenge was fragmentation. In many regions, accident data was paper-based, inconsistent, or siloed across agencies, making it nearly impossible to take meaningful action.<br/><br/>We grounded the solution in a simple idea: standardize data to unlock decision-making. From that foundation, I helped design an end-to-end platform: a mobile app for field data capture by police and officials; a centralized data system to unify inputs across agencies; dashboards and analytics tools to identify high-risk locations; and a predictive modeling experience to simulate interventions (for example, traffic lights or barriers) and forecast impact.<br/><br/>Beyond interface design, I helped define the data model and taxonomy, ensuring consistency across countries while allowing for local variation. I also influenced front-end architecture to support a scalable, white-label solution. The platform leveraged machine learning and statistical modeling to move beyond reporting, enabling governments to proactively plan and justify interventions.",
     },
     impactSection: {
       blocks: [
         {
-          title: "Faster insights",
-          body: "Countries could submit and analyze road safety data in a consistent format, enabling faster regional and global insights.",
+          title: "Global adoption and reach",
+          body: "Implemented in 15 pilots across 13+ countries, with 4,500+ trained users and 16+ government organizations actively supported across regions.",
         },
         {
-          title: "Inclusive design",
-          body: "The platform was designed for varied literacy and connectivity, so more countries could participate meaningfully.",
+          title: "Policy and infrastructure impact",
+          body: "Used to inform infrastructure investments and policy decisions while enabling cross-agency collaboration through shared data systems.",
         },
         {
-          title: "Scalable foundation",
-          body: "The initial launch established a foundation that could grow as more countries and data types were added.",
+          title: "Recognized road safety outcomes",
+          body: "The platform and broader GRSF initiative received multiple Prince Michael International Road Safety Awards. Cities such as Fortaleza, Brazil, used DRIVER to implement safety improvements tied to award-winning outcomes.",
+        },
+        {
+          title: "From reactive to proactive",
+          body: "DRIVER helped shift road safety work from reactive response to proactive, data-driven planning at national and city levels.",
         },
       ],
       subtitle: "Outcomes",
-      title: "Outcome",
-      text: "The platform launched on schedule and was adopted by pilot countries, contributing to the World Bank’s road safety and data goals.",
+      title: "Global systems change with real-world impact",
+      text: "This project demonstrates leadership across systems, not just screens. It required navigating government and policy environments, cross-country implementation complexity, and global data standardization under real-world field constraints.<br/><br/>Ultimately, DRIVER reflects the kind of work where design, technology, and systems thinking come together to improve how the world operates and help save lives.",
     },
   },
   {
