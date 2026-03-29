@@ -1,6 +1,9 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getBlogPost, getBlogPostContent, getBlogPosts } from "@/data/blog";
+import { pageMetadata } from "@/lib/page-metadata";
+import { getSiteUrl, siteConfig } from "@/lib/site";
 
 type BlogDetailPageProps = {
   params: Promise<{
@@ -10,6 +13,25 @@ type BlogDetailPageProps = {
 
 export function generateStaticParams() {
   return getBlogPosts().map((post) => ({ date: post.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: BlogDetailPageProps): Promise<Metadata> {
+  const { date } = await params;
+  const post = getBlogPost(date);
+  if (!post) {
+    return {};
+  }
+  const publishedTime = `${post.date}T12:00:00.000Z`;
+  return pageMetadata({
+    path: `/insights/${post.slug}`,
+    title: post.title,
+    description: post.summary,
+    ogImage: post.image,
+    type: "article",
+    publishedTime,
+  });
 }
 
 export default async function InsightsDetailPage({ params }: BlogDetailPageProps) {
@@ -27,10 +49,36 @@ export default async function InsightsDetailPage({ params }: BlogDetailPageProps
 
   const PostContent = contentModule.default;
 
+  const articleUrl = new URL(`/insights/${post.slug}`, getSiteUrl()).toString();
+  const datePublished = `${post.date}T12:00:00.000Z`;
+  const articleStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.summary,
+    datePublished,
+    image: [new URL(post.image, getSiteUrl()).toString()],
+    author: {
+      "@type": "Person",
+      name: siteConfig.name,
+      url: getSiteUrl().origin,
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": articleUrl,
+    },
+  };
+
   return (
     <section data-particle-shape="" className="w-full py-[clamp(4rem,12vw,8rem)] animate-in-view">
       <div className="px-4 md:px-[clamp(2rem,8vw,4rem)]">
         <div className="mx-auto max-w-4xl">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(articleStructuredData),
+            }}
+          />
           <header className="mb-12">
             <p className="text-[clamp(0.875rem,2vw,1rem)] font-semibold uppercase tracking-wide text-muted-foreground">
               Insights

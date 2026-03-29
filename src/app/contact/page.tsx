@@ -1,11 +1,13 @@
 import type { Metadata } from "next"
 import { ContactForm } from "./ContactForm"
+import { pageMetadata } from "@/lib/page-metadata"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/contact",
   title: "Contact - Mike Tedeschi",
   description:
     "Get in touch for design leadership, AI enablement, product strategy, or collaboration.",
-}
+})
 
 const sectionPaddingX = "px-[clamp(2rem,8vw,4rem)]"
 const eyebrow =

@@ -1,12 +1,14 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { pageMetadata } from "@/lib/page-metadata"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/services",
   title: "Services - Mike Tedeschi",
   description:
     "Design, product, and technology orchestrated for real impact. AI enablement, product leadership, advisory, and outcome-driven sprints.",
-}
+})
 
 const sectionPadding = "pt-[120px] md:pt-[clamp(4rem,10vw,6rem)] pb-[clamp(4rem,10vw,6rem)]"
 const sectionPaddingX = "px-[clamp(2rem,8vw,4rem)]"

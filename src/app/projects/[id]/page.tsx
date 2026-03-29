@@ -1,5 +1,7 @@
+import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { getProject, getProjectsList } from "@/data/projects"
+import { pageMetadata } from "@/lib/page-metadata"
 import {
   isCaseStudyPasswordProtected,
   CASE_STUDY_GATE_PASSWORD,
@@ -16,6 +18,22 @@ interface ProjectPageProps {
 export async function generateStaticParams() {
   const projects = getProjectsList()
   return projects.map((p) => ({ id: p.id }))
+}
+
+export async function generateMetadata({
+  params,
+}: ProjectPageProps): Promise<Metadata> {
+  const { id } = await params
+  const project = getProject(id)
+  if (!project) {
+    return {}
+  }
+  return pageMetadata({
+    path: `/projects/${project.id}`,
+    title: `${project.title} | ${project.client}`,
+    description: project.summary,
+    ogImage: project.image,
+  })
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {

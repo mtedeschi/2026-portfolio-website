@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { CallToActionSection } from "@/components/CallToActionSection";
 import { ParticleVisualization } from "@/components/ParticleVisualization";
 import { InViewObserver } from "@/components/InViewObserver";
+import { defaultSiteDescription, getSiteUrl, siteConfig } from "@/lib/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,9 +24,36 @@ const leagueGothic = League_Gothic({
 });
 
 export const metadata: Metadata = {
+  metadataBase: getSiteUrl(),
   title: "Mike Tedeschi - AI-First Design, Product, and Tech Leadership",
-  description: "Portfolio of Mike Tedeschi - Design, Product, and Technology Leadership",
+  description: defaultSiteDescription,
   manifest: "/favicon/site.webmanifest",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
+  openGraph: {
+    type: "website",
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
+    title: "Mike Tedeschi - AI-First Design, Product, and Tech Leadership",
+    description: defaultSiteDescription,
+    images: [
+      {
+        url: siteConfig.defaultOgImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mike Tedeschi - AI-First Design, Product, and Tech Leadership",
+    description: defaultSiteDescription,
+    images: [siteConfig.defaultOgImage],
+  },
   icons: {
     icon: [
       { url: "/favicon/favicon.ico", sizes: "any" },
@@ -44,11 +72,37 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const origin = getSiteUrl().origin;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        name: siteConfig.name,
+        url: origin,
+        description: defaultSiteDescription,
+        publisher: { "@id": `${origin}/#person` },
+      },
+      {
+        "@type": "Person",
+        "@id": `${origin}/#person`,
+        name: siteConfig.name,
+        url: origin,
+        sameAs: [siteConfig.linkedInUrl, siteConfig.substackUrl],
+        jobTitle: "Design, product, and technology leadership",
+      },
+    ],
+  };
+
   return (
     <html lang="en" className="dark">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${leagueGothic.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <ParticleVisualization />
         <div
           className="fixed inset-0 z-[5] pointer-events-none"
