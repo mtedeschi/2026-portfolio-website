@@ -32,7 +32,7 @@ export function CaseStudiesSection() {
             Selected work
           </p>
           <h2 className="text-[clamp(2.5rem,7vw,4.25rem)] font-bold leading-[1.08] tracking-tight">
-            My <strong>past projects</strong> demonstrating leadership, systems thinking, and measurable impact
+            My <strong className="strong-accent-chart-3">past projects</strong> demonstrating leadership, systems thinking, and measurable impact
           </h2>
         </div>
       </div>
@@ -138,14 +138,14 @@ export function CaseStudiesSection() {
               className="min-w-11 min-h-11 md:min-w-0 md:min-h-0 p-[clamp(0.5rem,1.5vw,0.75rem)] rounded-full hover:bg-muted transition-colors flex items-center justify-center"
               aria-label="Previous case study"
             >
-              <ChevronLeft className="w-5 h-5 md:w-[clamp(1rem,2vw,1.25rem)] md:h-[clamp(1rem,2vw,1.25rem)]" strokeWidth={1} />
+              <ChevronLeft className="w-[1.5625rem] h-[1.5625rem] md:w-[clamp(1.25rem,2.5vw,1.5625rem)] md:h-[clamp(1.25rem,2.5vw,1.5625rem)]" strokeWidth={1} />
             </button>
             <button
               onClick={goToNext}
               className="min-w-11 min-h-11 md:min-w-0 md:min-h-0 p-[clamp(0.5rem,1.5vw,0.75rem)] rounded-full hover:bg-muted transition-colors flex items-center justify-center"
               aria-label="Next case study"
             >
-              <ChevronRight className="w-5 h-5 md:w-[clamp(1rem,2vw,1.25rem)] md:h-[clamp(1rem,2vw,1.25rem)]" strokeWidth={1} />
+              <ChevronRight className="w-[1.5625rem] h-[1.5625rem] md:w-[clamp(1.25rem,2.5vw,1.5625rem)] md:h-[clamp(1.25rem,2.5vw,1.5625rem)]" strokeWidth={1} />
             </button>
           </div>
           <div className="flex items-center gap-[clamp(0.375rem,1vw,0.5rem)]">

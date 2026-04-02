@@ -16,7 +16,7 @@ const INTEREST_OPTIONS = [
 ]
 
 const inputClass =
-  "w-full rounded-lg border border-input bg-background px-[clamp(0.75rem,2vw,1rem)] py-[clamp(0.5rem,1.5vw,0.75rem)] text-[clamp(0.875rem,2vw,1rem)] placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
+  "w-full rounded-lg border border-input bg-white px-[clamp(0.75rem,2vw,1rem)] py-[clamp(0.5rem,1.5vw,0.75rem)] text-[clamp(0.875rem,2vw,1rem)] text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
 
 export function ContactForm() {
   const [state, formAction, isPending] = useActionState<ContactFormState, FormData>(
@@ -115,7 +115,12 @@ export function ContactForm() {
       </div>
 
       <div className="pt-[clamp(0.5rem,2vw,1rem)]">
-        <Button type="submit" size="lg" disabled={isPending}>
+        <Button
+          type="submit"
+          size="lg"
+          disabled={isPending}
+          className="text-[clamp(0.875rem,2vw,1rem)] h-[clamp(2.75rem,7vw,3.5rem)] px-[clamp(1.5rem,4vw,2rem)]"
+        >
           {isPending ? "Sending…" : "Send message"}
         </Button>
       </div>

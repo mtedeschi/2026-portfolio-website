@@ -23,7 +23,9 @@ export function LeadershipSection() {
             A little about me
           </p>
           <h2 className="text-[clamp(2.5rem,7vw,4.25rem)] font-bold leading-[1.08] tracking-tight">
-            20 years of <strong>cross-functional experience</strong> across technology, design, and product
+            20 years of{" "}
+            <strong className="strong-accent-chart-1">cross-functional experience</strong> across
+            technology, design, and product
           </h2>
           <p className="text-[clamp(1rem,2.5vw,1.25rem)] leading-relaxed">
             Digital transformation succeeds when strategy, systems, and

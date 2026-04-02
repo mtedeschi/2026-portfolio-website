@@ -135,6 +135,49 @@ h3 strong.in-view::after {
   right: 0%;
 }
 
+/*
+ * Optional heading highlight accent (default: primary / teal).
+ * Add one of these classes to <strong> inside h1–h3:
+ *   strong-accent-chart-1 — coral/red (--chart-1)
+ *   strong-accent-chart-2 — teal (--chart-2, same hue as primary)
+ *   strong-accent-chart-3 — amber (--chart-3)
+ */
+h1 strong.strong-accent-chart-1,
+h2 strong.strong-accent-chart-1,
+h3 strong.strong-accent-chart-1 {
+  color: #fafaf9;
+}
+
+h1 strong.strong-accent-chart-1::after,
+h2 strong.strong-accent-chart-1::after,
+h3 strong.strong-accent-chart-1::after {
+  background: var(--chart-1);
+}
+
+h1 strong.strong-accent-chart-2,
+h2 strong.strong-accent-chart-2,
+h3 strong.strong-accent-chart-2 {
+  color: #fafaf9;
+}
+
+h1 strong.strong-accent-chart-2::after,
+h2 strong.strong-accent-chart-2::after,
+h3 strong.strong-accent-chart-2::after {
+  background: var(--chart-2);
+}
+
+h1 strong.strong-accent-chart-3,
+h2 strong.strong-accent-chart-3,
+h3 strong.strong-accent-chart-3 {
+  color: #fafaf9;
+}
+
+h1 strong.strong-accent-chart-3::after,
+h2 strong.strong-accent-chart-3::after,
+h3 strong.strong-accent-chart-3::after {
+  background: var(--chart-3);
+}
+
 /* Section fade-in-and-up on scroll (triggered by .in-view via JS) */
 .animate-in-view {
   opacity: 0;

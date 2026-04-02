@@ -7,7 +7,8 @@ type ParticleShape = "circle" | "triangle" | "square" | "plus"
 const PARTICLE_SHAPES: ParticleShape[] = ["circle", "triangle", "square", "plus"]
 
 /** Strictly under 2.5% — sparse accent shapes */
-const ACCENT_PARTICLE_RATIO = 0.022
+/** ~2.42% — prior 2.2% increased by 10% */
+const ACCENT_PARTICLE_RATIO = 0.022 * 1.1
 /** Three accent colors (coral, teal, amber) — keep in sync with globals chart tokens */
 const ACCENT_RGB: ReadonlyArray<readonly [number, number, number]> = [
   [232, 93, 76],
@@ -434,7 +435,7 @@ function drawShape(
   let a: number
   if (accent !== null) {
     ;[r, g, b] = ACCENT_RGB[accent]
-    a = opacity * 0.75
+    a = opacity
   } else {
     r = 80
     g = 72
@@ -715,12 +716,16 @@ export function ParticleVisualization({
       // Skip drawing when effectively invisible
       if (particle.visibilityOpacity < 0.01) return
 
-      // Opacity based on z-depth (closer = more opaque)
-      // During initial load, fade in; during morph, maintain full opacity
+      // Neutral particles: z-depth + fade + mobile dim. Accent particles: full alpha when visible
+      // (no z-depth or mobile attenuation so accent colors read at true strength).
       const baseOpacity = (0.12 + particle.z * 0.42) * 0.85
       const mobileMultiplier = isMobileRef.current ? MOBILE_OPACITY_MULTIPLIER : 1
       const opacityProgress = isMorphingRef.current ? 1 : easedProgress
-      const opacity = baseOpacity * opacityProgress * mobileMultiplier * particle.visibilityOpacity
+      const v = particle.visibilityOpacity
+      const opacity =
+        particle.accent !== null
+          ? opacityProgress * v
+          : baseOpacity * opacityProgress * mobileMultiplier * v
 
       drawShape(
         ctx,

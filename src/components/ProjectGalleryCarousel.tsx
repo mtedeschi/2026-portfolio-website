@@ -73,14 +73,14 @@ export function ProjectGalleryCarousel({ images }: ProjectGalleryCarouselProps) 
               className="min-w-11 min-h-11 md:min-w-0 md:min-h-0 p-[clamp(0.5rem,1.5vw,0.75rem)] rounded-full hover:bg-muted transition-colors flex items-center justify-center"
               aria-label="Previous image"
             >
-              <ChevronLeft className="w-5 h-5 md:w-[clamp(1rem,2vw,1.25rem)] md:h-[clamp(1rem,2vw,1.25rem)]" strokeWidth={1} />
+              <ChevronLeft className="w-[1.5625rem] h-[1.5625rem] md:w-[clamp(1.25rem,2.5vw,1.5625rem)] md:h-[clamp(1.25rem,2.5vw,1.5625rem)]" strokeWidth={1} />
             </button>
             <button
               onClick={goToNext}
               className="min-w-11 min-h-11 md:min-w-0 md:min-h-0 p-[clamp(0.5rem,1.5vw,0.75rem)] rounded-full hover:bg-muted transition-colors flex items-center justify-center"
               aria-label="Next image"
             >
-              <ChevronRight className="w-5 h-5 md:w-[clamp(1rem,2vw,1.25rem)] md:h-[clamp(1rem,2vw,1.25rem)]" strokeWidth={1} />
+              <ChevronRight className="w-[1.5625rem] h-[1.5625rem] md:w-[clamp(1.25rem,2.5vw,1.5625rem)] md:h-[clamp(1.25rem,2.5vw,1.5625rem)]" strokeWidth={1} />
             </button>
           </div>
           <div className="flex items-center gap-[clamp(0.375rem,1vw,0.5rem)]">
