@@ -24,7 +24,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: ProjectPageProps): Promise<Metadata> {
-  const { id } = await params
+  const { id: rawId } = await params
+  const id = rawId.trim().toLowerCase()
   const project = getProject(id)
   if (!project) {
     return {}
@@ -38,7 +39,8 @@ export async function generateMetadata({
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
-  const { id } = await params
+  const { id: rawId } = await params
+  const id = rawId.trim().toLowerCase()
   const project = getProject(id)
   if (!project) notFound()
 

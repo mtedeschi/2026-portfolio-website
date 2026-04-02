@@ -19,5 +19,8 @@ export const UNLOCK_TTL_MS = 7 * 24 * 60 * 60 * 1000
 export const UNLOCK_STORAGE_KEY_PREFIX = "caseStudyUnlocked:"
 
 export function isCaseStudyPasswordProtected(projectId: string): boolean {
-  return PASSWORD_PROTECTED_PROJECT_IDS.has(projectId)
+  const id = projectId.trim().toLowerCase()
+  if (!id) return false
+  if (PUBLIC_PROJECT_IDS.has(id)) return false
+  return PASSWORD_PROTECTED_PROJECT_IDS.has(id)
 }

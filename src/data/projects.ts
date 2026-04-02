@@ -395,7 +395,8 @@ const projects: Project[] = [
 ]
 
 export function getProject(id: string): Project | undefined {
-  return projects.find((p) => p.id === id)
+  const normalized = id.trim().toLowerCase()
+  return projects.find((p) => p.id === normalized)
 }
 
 export function getProjectsList(): Pick<Project, "id" | "client" | "title" | "summary" | "tags" | "image">[] {

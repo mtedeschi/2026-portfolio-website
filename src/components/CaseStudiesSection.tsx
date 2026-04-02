@@ -2,8 +2,9 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight, Lock } from "lucide-react"
 import { getProjectsList } from "@/data/projects"
+import { isCaseStudyPasswordProtected } from "@/data/projectPasswordGate"
 import { useSwipeGesture } from "@/hooks/useSwipeGesture"
 import { TAG_BADGE_CLASS } from "@/lib/tag-accent"
 
@@ -48,9 +49,10 @@ export function CaseStudiesSection() {
         >
           {caseStudies.map((study, index) => {
             const isActive = index === activeIndex
+            const isProtected = isCaseStudyPasswordProtected(study.id)
             return (
               <Link
-                key={index}
+                key={study.id}
                 href={`/projects/${study.id}`}
                 draggable={false}
                 onDragStart={(e) => e.preventDefault()}
@@ -65,6 +67,12 @@ export function CaseStudiesSection() {
                     : "w-[calc(100vw-4rem)] md:w-[22vw]"
                 }`}
               >
+                {isProtected && (
+                  <span className="absolute top-4 right-4 z-10 flex items-center gap-1 rounded-full bg-black/55 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-wide text-white backdrop-blur-sm">
+                    <Lock className="h-3 w-3 shrink-0" aria-hidden />
+                    Protected
+                  </span>
+                )}
                 {/* Background Image - only shown on active card */}
                 <div
                   className={`absolute inset-0 bg-muted bg-cover bg-center transition-opacity duration-500 [user-drag:none] [-webkit-user-drag:none] ${
