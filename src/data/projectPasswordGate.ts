@@ -4,10 +4,10 @@
  */
 
 /** Project IDs that require a password to view. */
-export const PASSWORD_PROTECTED_PROJECT_IDS = new Set<string>(["nvidia", "pods"])
+export const PASSWORD_PROTECTED_PROJECT_IDS = new Set<string>(["nvidia", "pods", "ey"])
 
 /** Project IDs that are always public (no gate). */
-export const PUBLIC_PROJECT_IDS = new Set<string>(["worldbank", "solventum", "ey"])
+export const PUBLIC_PROJECT_IDS = new Set<string>(["worldbank", "solventum"])
 
 /** Password accepted by the gate overlay. */
 export const CASE_STUDY_GATE_PASSWORD = "thisisamazing"

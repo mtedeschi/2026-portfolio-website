@@ -22,7 +22,7 @@ export default function ContactPage() {
     >
       <div className="w-full lg:max-w-[70%] flex flex-col gap-[clamp(1.5rem,4vw,2.5rem)]">
         <p className={eyebrow}>Contact</p>
-        <h1 className="text-[clamp(2rem,8vw,4.5rem)] font-bold leading-[1.1] tracking-tight">
+        <h1 className="text-[clamp(2.75rem,9vw,5.75rem)] font-bold leading-[1.05] tracking-tight">
           Let&apos;s work together
         </h1>
         <div className="flex flex-col gap-[clamp(1rem,2.5vw,1.25rem)]">

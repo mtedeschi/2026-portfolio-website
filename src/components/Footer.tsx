@@ -3,14 +3,13 @@ import { Linkedin, Github, Heart, Bot } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
+    <footer className="border-t border-stone-200/60 bg-[#f5f0e8]/95 backdrop-blur-md supports-backdrop-filter:bg-[#f5f0e8]/80">
       <div className="w-full flex items-center justify-between px-4 md:px-[clamp(2rem,8vw,4rem)] py-[clamp(2rem,6vw,3rem)] gap-[clamp(1rem,4vw,2rem)]">
         {/* Left side - Name and tagline */}
         <div className="flex flex-col gap-2">
           <Link
             href="/"
-            className="text-[clamp(1.25rem,3vw,1.5rem)] font-normal text-muted-foreground transition-colors hover:text-primary uppercase tracking-wide"
-            style={{ fontFamily: "var(--font-league-gothic)" }}
+            className="font-headline text-[clamp(1.35rem,3.2vw,1.65rem)] font-semibold text-muted-foreground transition-colors hover:text-primary"
           >
             Mike Tedeschi
           </Link>

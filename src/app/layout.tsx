@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, League_Gothic } from "next/font/google";
+import { Bitter, Geist_Mono, Noto_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -8,18 +8,19 @@ import { ParticleVisualization } from "@/components/ParticleVisualization";
 import { InViewObserver } from "@/components/InViewObserver";
 import { defaultSiteDescription, getSiteUrl, siteConfig } from "@/lib/site";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const bitter = Bitter({
+  variable: "--font-bitter",
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
+
+const notoSans = Noto_Sans({
+  variable: "--font-noto-sans",
   subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const leagueGothic = League_Gothic({
-  variable: "--font-league-gothic",
   subsets: ["latin"],
 });
 
@@ -95,9 +96,9 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${leagueGothic.variable} antialiased`}
+        className={`${bitter.variable} ${notoSans.variable} ${geistMono.variable} antialiased`}
       >
         <script
           type="application/ld+json"
@@ -107,7 +108,8 @@ export default function RootLayout({
         <div
           className="fixed inset-0 z-[5] pointer-events-none"
           style={{
-            background: "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%)",
+            background:
+              "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(245,240,232,0.35) 100%)",
           }}
           aria-hidden
         />

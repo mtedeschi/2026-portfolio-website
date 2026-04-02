@@ -15,15 +15,15 @@ export function LeadershipSection() {
   ]
 
   return (
-    <section data-particle-shape="false" className="w-full px-[clamp(2rem,8vw,4rem)] pt-[120px] md:pt-[clamp(4rem,12vw,8rem)] pb-[clamp(4rem,12vw,8rem)] animate-in-view">
+    <section data-particle-shape="false" className="w-full border-y border-stone-200/70 bg-white px-[clamp(2rem,8vw,4rem)] pt-[120px] md:pt-[clamp(4rem,12vw,8rem)] pb-[clamp(4rem,12vw,8rem)] animate-in-view">
       <div className="flex flex-col gap-[clamp(3rem,8vw,5rem)]">
         {/* Header Content */}
-        <div className="flex flex-col gap-[clamp(1.5rem,4vw,2rem)] w-full lg:max-w-[60%]">
+        <div className="flex flex-col gap-[clamp(1.5rem,4vw,2rem)] w-full lg:max-w-[80%]">
           <p className="text-[clamp(0.875rem,2vw,1rem)] font-semibold text-muted-foreground uppercase tracking-wide">
-            My Capabilities
+            A little about me
           </p>
-          <h2 className="text-[clamp(2rem,6.5vw,3.25rem)] font-bold leading-[1.1] tracking-tight">
-            I bring <strong>proven design, product & technology</strong> leadership for the AI era
+          <h2 className="text-[clamp(2.5rem,7vw,4.25rem)] font-bold leading-[1.08] tracking-tight">
+            20 years of <strong>cross-functional experience</strong> across technology, design, and product
           </h2>
           <p className="text-[clamp(1rem,2.5vw,1.25rem)] leading-relaxed">
             Digital transformation succeeds when strategy, systems, and
@@ -38,7 +38,7 @@ export function LeadershipSection() {
           {blocks.map((block, index) => (
             <div
               key={index}
-              className="rounded-lg p-[clamp(1.5rem,4vw,2rem)] flex flex-col gap-[clamp(1rem,2.5vw,1.25rem)] bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60"
+              className="rounded-xl border border-stone-200/60 bg-[#faf9f7] p-[clamp(1.5rem,4vw,2rem)] flex flex-col gap-[clamp(1rem,2.5vw,1.25rem)]"
             >
               <h3 className="text-[clamp(1.625rem,4vw,1.875rem)] font-semibold tracking-tight leading-tight">
                 {block.title}

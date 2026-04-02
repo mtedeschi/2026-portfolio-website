@@ -60,8 +60,11 @@ export function ProjectPasswordGate({
 
   useEffect(() => {
     if (!isPasswordProtected) return
-    if (isUnlockedInStorage(projectId)) setUnlocked(true)
-    setCheckedStorage(true)
+    // Read localStorage after mount so SSR HTML matches first client paint; then sync unlock state.
+    queueMicrotask(() => {
+      if (isUnlockedInStorage(projectId)) setUnlocked(true)
+      setCheckedStorage(true)
+    })
   }, [projectId, isPasswordProtected])
 
   // After unlocking, notify InViewObserver to re-observe so .animate-in-view sections get their fade-in

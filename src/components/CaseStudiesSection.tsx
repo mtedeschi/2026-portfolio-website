@@ -5,6 +5,7 @@ import Link from "next/link"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { getProjectsList } from "@/data/projects"
 import { useSwipeGesture } from "@/hooks/useSwipeGesture"
+import { TAG_BADGE_CLASS } from "@/lib/tag-accent"
 
 const caseStudies = getProjectsList()
 
@@ -25,12 +26,12 @@ export function CaseStudiesSection() {
     <section id="case-studies" data-particle-shape="false" className="w-full pt-[120px] md:pt-[clamp(4rem,12vw,8rem)] pb-[clamp(4rem,12vw,8rem)] overflow-hidden animate-in-view">
       {/* Header */}
       <div className="px-4 md:px-[clamp(2rem,8vw,4rem)] mb-[clamp(2rem,6vw,4rem)]">
-        <div className="flex flex-col gap-[clamp(1rem,3vw,1.5rem)] w-full lg:max-w-[60%]">
+        <div className="flex flex-col gap-[clamp(1rem,3vw,1.5rem)] w-full lg:max-w-[80%]">
           <p className="text-[clamp(0.875rem,2vw,1rem)] font-semibold text-muted-foreground uppercase tracking-wide">
             Selected work
           </p>
-          <h2 className="text-[clamp(2rem,6.5vw,3.25rem)] font-bold leading-[1.1] tracking-tight">
-            <strong>Past projects</strong> demonstrating leadership, systems thinking, and measurable impact
+          <h2 className="text-[clamp(2.5rem,7vw,4.25rem)] font-bold leading-[1.08] tracking-tight">
+            My <strong>past projects</strong> demonstrating leadership, systems thinking, and measurable impact
           </h2>
         </div>
       </div>
@@ -58,7 +59,7 @@ export function CaseStudiesSection() {
                     e.preventDefault()
                   }
                 }}
-                className={`relative shrink-0 rounded-lg overflow-hidden transition-all duration-500 h-[60vh] md:h-[70vh] block select-none ${
+                className={`relative shrink-0 rounded-2xl md:rounded-3xl overflow-hidden transition-all duration-500 h-[60vh] md:h-[70vh] block select-none ${
                   isActive
                     ? "w-[calc(100vw-4rem)] md:w-[50vw]"
                     : "w-[calc(100vw-4rem)] md:w-[22vw]"
@@ -67,7 +68,7 @@ export function CaseStudiesSection() {
                 {/* Background Image - only shown on active card */}
                 <div
                   className={`absolute inset-0 bg-muted bg-cover bg-center transition-opacity duration-500 [user-drag:none] [-webkit-user-drag:none] ${
-                    isActive ? "opacity-100" : "opacity-0"
+                    isActive ? "opacity-100" : "opacity-30"
                   }`}
                   style={{
                     backgroundImage: `url(${study.image})`,
@@ -105,7 +106,7 @@ export function CaseStudiesSection() {
                         {study.tags.filter(Boolean).map((tag, tagIndex) => (
                           <span
                             key={tagIndex}
-                            className="text-[clamp(0.625rem,1.25vw,0.75rem)] font-medium text-white/90 bg-white/20 backdrop-blur-sm px-[clamp(0.5rem,1.25vw,0.75rem)] py-[clamp(0.25rem,0.5vw,0.375rem)] rounded-full"
+                            className={`text-[clamp(0.625rem,1.25vw,0.75rem)] font-semibold px-[clamp(0.5rem,1.25vw,0.75rem)] py-[clamp(0.25rem,0.5vw,0.375rem)] rounded-full ${TAG_BADGE_CLASS}`}
                           >
                             {tag}
                           </span>

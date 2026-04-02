@@ -13,12 +13,15 @@ export const metadata: Metadata = pageMetadata({
 const sectionPadding = "pt-[120px] md:pt-[clamp(4rem,10vw,6rem)] pb-[clamp(4rem,10vw,6rem)]"
 const sectionPaddingX = "px-[clamp(2rem,8vw,4rem)]"
 const eyebrow = "text-[clamp(0.875rem,2vw,1rem)] font-semibold text-muted-foreground uppercase tracking-wide"
-const heading = "text-[clamp(2rem,5.5vw,2.75rem)] font-bold leading-[1.1] tracking-tight"
-const headingSmall = "text-[clamp(1.75rem,4.5vw,2.5rem)] font-bold leading-[1.1] tracking-tight"
+const headingSmall = "text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.08] tracking-tight"
 const body = "text-[clamp(1rem,2.5vw,1.25rem)] leading-relaxed"
 const bodyMuted = "text-[clamp(0.875rem,2vw,1rem)] text-muted-foreground leading-relaxed"
 const cardClass =
-  "rounded-lg p-[clamp(1.5rem,4vw,2rem)] flex flex-col gap-[clamp(1rem,2.5vw,1.25rem)] bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60"
+  "rounded-xl border border-stone-200/80 bg-[#faf9f7] p-[clamp(1.5rem,4vw,2rem)] flex flex-col gap-[clamp(1rem,2.5vw,1.25rem)] shadow-sm"
+
+/** Matches homepage Leadership section cards (no shadow). */
+const sprintCardClass =
+  "rounded-xl border border-stone-200/60 bg-[#faf9f7] p-[clamp(1.5rem,4vw,2rem)] flex flex-col gap-[clamp(1rem,2.5vw,1.25rem)]"
 
 export default function ServicesPage() {
   return (
@@ -28,9 +31,9 @@ export default function ServicesPage() {
         data-particle-shape="zap"
         className={`w-full pt-[120px] md:pt-0 md:min-h-[calc(100dvh-4rem)] flex items-center ${sectionPaddingX} animate-in-view`}
       >
-        <div className="w-full lg:max-w-[70%] flex flex-col gap-[clamp(1.5rem,4vw,2.5rem)]">
+        <div className="w-full lg:max-w-[80%] flex flex-col gap-[clamp(1.5rem,4vw,2.5rem)]">
           <p className={eyebrow}>Services</p>
-          <h1 className="text-[clamp(2rem,8vw,4.5rem)] font-bold leading-[1.1] tracking-tight">
+          <h1 className="text-[clamp(2.75rem,9vw,5.75rem)] font-bold leading-[1.05] tracking-tight">
             Design. Product. Technology. <strong>Orchestrated for Real Impact.</strong>
           </h1>
           <div className="flex flex-col gap-[clamp(1rem,2.5vw,1.25rem)]">
@@ -50,7 +53,7 @@ export default function ServicesPage() {
       {/* What I Do */}
       <section data-particle-shape="false" className={`w-full ${sectionPadding} ${sectionPaddingX} animate-in-view`}>
         <div className="flex flex-col gap-[clamp(3rem,8vw,5rem)]">
-          <div className="flex flex-col gap-[clamp(1rem,3vw,1.5rem)] w-full lg:max-w-[60%]">
+          <div className="flex flex-col gap-[clamp(1rem,3vw,1.5rem)] w-full lg:max-w-[80%]">
             <p className={eyebrow}>What I Do</p>
             <h2 className={headingSmall}>
               Capabilities that connect <strong>strategy to execution</strong>
@@ -151,7 +154,10 @@ export default function ServicesPage() {
       </section>
 
       {/* Sprint Offerings */}
-      <section data-particle-shape="false" className={`w-full ${sectionPadding} ${sectionPaddingX} animate-in-view`}>
+      <section
+        data-particle-shape="false"
+        className={`w-full border-y border-stone-200/70 bg-white ${sectionPadding} ${sectionPaddingX} animate-in-view`}
+      >
         <div className="flex flex-col gap-[clamp(3rem,8vw,5rem)]">
           <div className="flex flex-col gap-[clamp(1rem,3vw,1.5rem)] w-full lg:max-w-[60%]">
             <p className={eyebrow}>Sprint Offerings</p>
@@ -166,7 +172,7 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[clamp(1.5rem,4vw,2rem)]">
             {/* AI Orchestration Sprint */}
             <div id="ai-orchestration" className="scroll-mt-[clamp(6rem,15vw,8rem)] min-w-0">
-              <div className={`${cardClass} gap-[clamp(1.5rem,4vw,2rem)] h-full flex flex-col`}>
+              <div className={`${sprintCardClass} h-full`}>
                 <div>
                   <p className="text-[clamp(0.8125rem,1.75vw,0.9375rem)] font-medium text-primary uppercase tracking-wide mb-1">
                     4–6 Weeks
@@ -176,7 +182,7 @@ export default function ServicesPage() {
                   </h3>
                 </div>
                 <p className={bodyMuted}>
-                  Most organizations struggle with AI not because of the tools—but because they don't know where it fits in their actual work. This sprint focuses on identifying where AI creates real value and designing workflows that make it usable, measurable, and scalable all tied to measureable business outcomes.
+                  Most organizations struggle with AI not because of the tools—but because they don&apos;t know where it fits in their actual work. This sprint focuses on identifying where AI creates real value and designing workflows that make it usable, measurable, and scalable all tied to measureable business outcomes.
                 </p>
                 <div>
                   <h4 className="text-[clamp(1rem,2.5vw,1.125rem)] font-semibold mb-[clamp(0.75rem,2vw,1rem)]">Outcomes</h4>
@@ -196,7 +202,7 @@ export default function ServicesPage() {
 
             {/* Concept to Execution Sprint */}
             <div id="concept-to-execution" className="scroll-mt-[clamp(6rem,15vw,8rem)] min-w-0">
-              <div className={`${cardClass} gap-[clamp(1.5rem,4vw,2rem)] h-full flex flex-col`}>
+              <div className={`${sprintCardClass} h-full`}>
                 <div>
                   <p className="text-[clamp(0.8125rem,1.75vw,0.9375rem)] font-medium text-primary uppercase tracking-wide mb-1">
                     2–4 Weeks
@@ -206,7 +212,7 @@ export default function ServicesPage() {
                   </h3>
                 </div>
                 <p className={bodyMuted}>
-                  Great ideas are everywhere. Execution is where most teams get stuck. This sprint is designed to take a concept—whether it's a new product, internal tool, or experience—and turn it into a functional, testable solution in four weeks or less.
+                  Great ideas are everywhere. Execution is where most teams get stuck. This sprint is designed to take a concept—whether it&apos;s a new product, internal tool, or experience—and turn it into a functional, testable solution in four weeks or less.
                 </p>
                 <div>
                   <h4 className="text-[clamp(1rem,2.5vw,1.125rem)] font-semibold mb-[clamp(0.75rem,2vw,1rem)]">Outcomes</h4>

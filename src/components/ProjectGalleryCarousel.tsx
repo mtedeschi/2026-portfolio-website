@@ -48,7 +48,7 @@ export function ProjectGalleryCarousel({ images }: ProjectGalleryCarouselProps) 
                 }
                 setActiveIndex(index)
               }}
-              className={`relative shrink-0 rounded-lg overflow-hidden transition-all duration-500 h-[60vh] md:h-[70vh] cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 select-none ${
+              className={`relative shrink-0 rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_0_25px_rgba(0,0,0,0.15)] transition-all duration-500 h-[60vh] md:h-[70vh] cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 select-none ${
                 isActive
                   ? "w-[calc(100vw-4rem)] md:w-[50vw]"
                   : "w-[calc(100vw-4rem)] md:w-[22vw]"

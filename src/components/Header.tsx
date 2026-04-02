@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import { Menu, ArrowRight } from "lucide-react"
+import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -13,8 +13,6 @@ import {
 const navigationItems = [
   { label: "Explore my work", href: "/#case-studies" },
   { label: "Services", href: "/services" },
-  { label: "AI Orchestration Sprint", href: "/services#ai-orchestration", inset: true },
-  { label: "Concept to Execution Sprint", href: "/services#concept-to-execution", inset: true },
   { label: "This Week in AI", href: "/insights" },
   { label: "Work with me", href: "/contact" },
 ]
@@ -23,7 +21,7 @@ export function Header() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-stone-200/60 bg-[#f5f0e8]/90 backdrop-blur-md supports-backdrop-filter:bg-[#f5f0e8]/75">
       <div className="w-full relative h-[clamp(3.5rem,8vw,4rem)] flex items-center justify-between px-[clamp(1rem,4vw,2rem)]">
         {/* Left side - Menu button + Logo (15% larger) */}
         <div className="flex items-center gap-[clamp(0.5rem,1.5vw,0.75rem)] z-10">
@@ -50,9 +48,6 @@ export function Header() {
                     onClick={() => setOpen(false)}
                     className="flex items-center gap-2 text-[clamp(1rem,2.5vw,1.125rem)] font-medium transition-colors hover:text-primary"
                   >
-                    {item.inset && (
-                      <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground" aria-hidden />
-                    )}
                     {item.label}
                   </Link>
                 ))}
@@ -61,8 +56,7 @@ export function Header() {
           </Sheet>
           <Link
             href="/"
-            className="flex items-center text-[clamp(1.44rem,3.45vw,1.725rem)] font-normal transition-colors hover:text-primary uppercase tracking-wide"
-            style={{ fontFamily: "var(--font-league-gothic)" }}
+            className="flex items-center font-headline text-[clamp(1.125rem,2.75vw,1.4rem)] font-semibold transition-colors hover:text-primary"
           >
             Mike Tedeschi
           </Link>

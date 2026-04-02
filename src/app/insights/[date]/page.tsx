@@ -70,7 +70,7 @@ export default async function InsightsDetailPage({ params }: BlogDetailPageProps
   };
 
   return (
-    <section data-particle-shape="" className="w-full py-[clamp(4rem,12vw,8rem)] animate-in-view">
+    <section data-particle-shape="" className="w-full border-y border-stone-200/70 bg-white py-[clamp(4rem,12vw,8rem)] animate-in-view">
       <div className="px-4 md:px-[clamp(2rem,8vw,4rem)]">
         <div className="mx-auto max-w-4xl">
           <script
@@ -84,7 +84,7 @@ export default async function InsightsDetailPage({ params }: BlogDetailPageProps
               Insights
             </p>
             <div className="mt-[clamp(1rem,3vw,1.5rem)] flex flex-col gap-[clamp(1rem,2.5vw,1.25rem)]">
-              <h1 className="text-[clamp(2rem,6.5vw,3.25rem)] font-bold leading-[1.1] tracking-tight">
+              <h1 className="text-[clamp(2.5rem,7vw,4.25rem)] font-bold leading-[1.08] tracking-tight">
                 {post.title}
               </h1>
               <p className="text-[clamp(1rem,2vw,1.125rem)] leading-relaxed text-muted-foreground">

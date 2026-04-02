@@ -2,10 +2,18 @@
 
 import { useEffect, useRef, useCallback, useState } from "react"
 
-type ShapeType = "plus" | "circle"
+type ParticleShape = "circle" | "triangle" | "square" | "plus"
 
-/** Change this to switch the particle shape (e.g. "plus" or "circle"). */
-const PARTICLE_SHAPE: ShapeType = "circle"
+const PARTICLE_SHAPES: ParticleShape[] = ["circle", "triangle", "square", "plus"]
+
+/** Strictly under 2.5% — sparse accent shapes */
+const ACCENT_PARTICLE_RATIO = 0.022
+/** Three accent colors (coral, teal, amber) — keep in sync with globals chart tokens */
+const ACCENT_RGB: ReadonlyArray<readonly [number, number, number]> = [
+  [232, 93, 76],
+  [15, 118, 110],
+  [202, 138, 4],
+]
 
 interface Particle {
   x: number
@@ -16,7 +24,9 @@ interface Particle {
   startY: number
   z: number
   size: number
-  shape: ShapeType
+  shape: ParticleShape
+  /** null = neutral; 0–2 = ACCENT_RGB index */
+  accent: 0 | 1 | 2 | null
   phase: number
   speed: number
   amplitude: number
@@ -27,7 +37,7 @@ interface Particle {
   visibilityOpacity: number
 }
 
-const PARTICLE_COUNT = 2000
+const PARTICLE_COUNT = 600
 const SHAPE_PARTICLE_RATIO = 0.7
 const MIN_DURATION = 500
 const MAX_DURATION = 2000
@@ -414,24 +424,56 @@ function drawShape(
   x: number,
   y: number,
   size: number,
-  shape: ShapeType,
-  opacity: number
+  shape: ParticleShape,
+  opacity: number,
+  accent: 0 | 1 | 2 | null
 ) {
-  ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`
-  ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`
-  ctx.lineWidth = 1.5
+  let r: number
+  let g: number
+  let b: number
+  let a: number
+  if (accent !== null) {
+    ;[r, g, b] = ACCENT_RGB[accent]
+    a = opacity * 0.75
+  } else {
+    r = 80
+    g = 72
+    b = 64
+    a = opacity * 0.3
+  }
+
+  ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`
+  ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${a})`
+  ctx.lineWidth = 1
+
+  const half = size / 2
 
   if (shape === "circle") {
     ctx.beginPath()
-    ctx.arc(x, y, size / 2, 0, Math.PI * 2)
+    ctx.arc(x, y, half, 0, Math.PI * 2)
     ctx.fill()
     return
   }
 
-  // Plus sign
-  const thickness = size / 3
-  ctx.fillRect(x - size / 2, y - thickness / 2, size, thickness)
-  ctx.fillRect(x - thickness / 2, y - size / 2, thickness, size)
+  if (shape === "square") {
+    ctx.fillRect(x - half, y - half, size, size)
+    return
+  }
+
+  if (shape === "plus") {
+    const thickness = size / 3
+    ctx.fillRect(x - half, y - thickness / 2, size, thickness)
+    ctx.fillRect(x - thickness / 2, y - half, thickness, size)
+    return
+  }
+
+  // triangle (upward equilateral-ish)
+  ctx.beginPath()
+  ctx.moveTo(x, y - half)
+  ctx.lineTo(x + half, y + half * 0.85)
+  ctx.lineTo(x - half, y + half * 0.85)
+  ctx.closePath()
+  ctx.fill()
 }
 
 function easeOutCubic(t: number): number {
@@ -568,6 +610,13 @@ export function ParticleVisualization({
       const startX = centerX + Math.cos(finalAngle) * offscreenRadius
       const startY = centerY + Math.sin(finalAngle) * offscreenRadius
 
+      const shape =
+        PARTICLE_SHAPES[Math.floor(Math.random() * PARTICLE_SHAPES.length)]!
+      const accent: 0 | 1 | 2 | null =
+        Math.random() < ACCENT_PARTICLE_RATIO
+          ? (Math.floor(Math.random() * 3) as 0 | 1 | 2)
+          : null
+
       particles.push({
         x: startX,
         y: startY,
@@ -577,7 +626,8 @@ export function ParticleVisualization({
         startY,
         z: Math.random(),
         size: isShapeParticle ? 4 + Math.random() * 6 : 3 + Math.random() * 4,
-        shape: PARTICLE_SHAPE,
+        shape,
+        accent,
         phase: Math.random() * Math.PI * 2,
         speed: 0.5 + Math.random() * 1.5,
         amplitude: FLOAT_AMPLITUDE + Math.random() * FLOAT_AMPLITUDE,
@@ -667,14 +717,24 @@ export function ParticleVisualization({
 
       // Opacity based on z-depth (closer = more opaque)
       // During initial load, fade in; during morph, maintain full opacity
-      const baseOpacity = (0.1 + particle.z * 0.4) * 0.75
+      const baseOpacity = (0.12 + particle.z * 0.42) * 0.85
       const mobileMultiplier = isMobileRef.current ? MOBILE_OPACITY_MULTIPLIER : 1
       const opacityProgress = isMorphingRef.current ? 1 : easedProgress
       const opacity = baseOpacity * opacityProgress * mobileMultiplier * particle.visibilityOpacity
 
-      drawShape(ctx, particle.x, particle.y, particle.size, particle.shape, opacity)
+      drawShape(
+        ctx,
+        particle.x,
+        particle.y,
+        particle.size,
+        particle.shape,
+        opacity,
+        particle.accent
+      )
     })
 
+    // Self-scheduling animation frame (stable recursive loop)
+    // eslint-disable-next-line react-hooks/immutability -- intentional rAF loop
     frameRef.current = requestAnimationFrame(render)
   }, [])
 

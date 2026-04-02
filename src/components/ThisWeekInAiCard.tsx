@@ -1,31 +1,24 @@
 import Link from "next/link";
 import type { BlogPostSummary } from "@/data/blog";
+import { TAG_BADGE_CLASS } from "@/lib/tag-accent";
 
 type ThisWeekInAiCardProps = {
   post: BlogPostSummary;
 };
 
-function formatDate(dateString: string) {
-  return new Date(dateString).toLocaleDateString("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  });
-}
-
 export function ThisWeekInAiCard({ post }: ThisWeekInAiCardProps) {
   return (
     <Link
       href={`/insights/${post.slug}`}
-      className="group overflow-hidden rounded-2xl border border-border/50 bg-background/80 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/40"
+      className="group flex flex-col overflow-hidden rounded-xl border border-stone-200/60 bg-[#faf9f7] transition-all duration-300 hover:border-stone-300/90"
     >
       <div
-        className="h-48 w-full bg-cover bg-center"
+        className="h-48 w-full shrink-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${post.image})` }}
         aria-hidden
       />
 
-      <div className="flex flex-col gap-4 p-6">
+      <div className="flex flex-col gap-4 p-[clamp(1.25rem,3vw,1.5rem)]">
         <h3 className="text-2xl font-semibold leading-tight transition-colors group-hover:text-primary">
           {post.title}
         </h3>
@@ -36,7 +29,7 @@ export function ThisWeekInAiCard({ post }: ThisWeekInAiCardProps) {
           {post.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full bg-muted px-3 py-1 text-xs font-medium uppercase tracking-wide text-muted-foreground"
+              className={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide ${TAG_BADGE_CLASS}`}
             >
               {tag}
             </span>
