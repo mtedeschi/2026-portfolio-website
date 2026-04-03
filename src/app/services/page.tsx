@@ -56,7 +56,8 @@ export default function ServicesPage() {
           <div className="flex flex-col gap-[clamp(1rem,3vw,1.5rem)] w-full lg:max-w-[80%]">
             <p className={eyebrow}>What I Do</p>
             <h2 className={headingSmall}>
-              Capabilities that connect <strong>strategy to execution</strong>
+              Capabilities that connect{" "}
+              <strong className="strong-accent-chart-1">strategy to execution</strong>
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-[clamp(1.5rem,4vw,2rem)]">
@@ -162,7 +163,8 @@ export default function ServicesPage() {
           <div className="flex flex-col gap-[clamp(1rem,3vw,1.5rem)] w-full lg:max-w-[60%]">
             <p className={eyebrow}>Sprint Offerings</p>
             <h2 className={headingSmall}>
-              Structured, outcome-driven engagements
+              Structured,{" "}
+              <strong className="strong-accent-chart-3">outcome-driven</strong> engagements
             </h2>
             <p className={body}>
               Designed to move quickly from ambiguity to clarity—and from ideas to execution.
