@@ -26,6 +26,136 @@ type BlogContentModule = {
 
 const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "2026-04-06",
+    date: "2026-04-06",
+    title: "April 6, 2026: This Week in AI",
+    summary:
+      "This week: cognitive overload and trust, human orchestration and the ‘supermanager,’ AI funding and seed valuations, and infrastructure and environmental costs.",
+    tags: ["Scale", "Trust", "Infrastructure"],
+    image: "/images/insights/2026-04-06_thumb.jpg",
+    quickSummary:
+      "This week’s theme is scale—and keeping up with it: funding, cognitive load, and infrastructure, while AI keeps moving faster than many people can process, manage, and adapt to.",
+    substackUrl:
+      "https://miketedeschi.substack.com/p/april-6-2026-this-week-in-ai",
+    sources: [
+      {
+        label:
+          "AI Productivity — BCG study: AI ‘brain fry’ and cognitive overload",
+        url: "https://aiproductivity.ai/news/bcg-study-ai-brain-fry-cognitive-overload/",
+      },
+      {
+        label:
+          "AI Productivity — UPenn study: people follow ChatGPT’s wrong advice",
+        url: "https://aiproductivity.ai/news/upenn-study-people-follow-chatgpt-wrong-advice/",
+      },
+      {
+        label:
+          "TechCrunch — AI trust and adoption: more Americans use tools, fewer trust results",
+        url: "https://techcrunch.com/2026/03/30/ai-trust-adoption-poll-more-americans-adopt-tools-fewer-say-they-can-trust-the-results/",
+      },
+      {
+        label:
+          "Forbes — To build stronger AI, we need to better understand the human brain",
+        url: "https://www.forbes.com/sites/robtoews/2026/04/05/to-build-stronger-ai-we-need-to-better-understand-the-human-brain/",
+      },
+      {
+        label:
+          "Forbes — Getting rid of more humans in AI and restructuring the market",
+        url: "https://www.forbes.com/sites/johnwerner/2026/04/04/getting-rid-of-more-humans-in-ai-restructuring-market/",
+      },
+      {
+        label:
+          "Business Insider — Simon Willison and the ‘dark factory’ of AI-assisted software",
+        url: "https://www.businessinsider.com/simon-willison-dark-factory-ai-2026-4",
+      },
+      {
+        label:
+          "Forbes — AI’s real value only arises when humans step up (beyond doom talk)",
+        url: "https://www.forbes.com/sites/joemckendrick/2026/04/04/ignore-the-doom-talk-ais-real-value-only-arises-when-humans-step-up/",
+      },
+      {
+        label:
+          "Yahoo Finance — Jensen Huang on CEOs, imagination, and doing more with more",
+        url: "https://finance.yahoo.com/sectors/technology/articles/jensen-huang-says-ceos-imagination-183000742.html",
+      },
+      {
+        label:
+          "Fortune — Jensen Huang: workers scared of AI may be confusing the job with the tools",
+        url: "https://fortune.com/2026/04/01/nvidia-ceo-jensen-huang-advice-workers-scared-ai-confusing-job-with-tools-to-do-it/",
+      },
+      {
+        label:
+          "TechCrunch — Poll: willingness to work for an AI ‘boss’ / supervisor (Quinnipiac)",
+        url: "https://techcrunch.com/2026/03/30/ai-work-boss-supervisor-us-quinnipiac-poll/",
+      },
+      {
+        label:
+          "Forbes — AI agents are multiplying faster than humans can manage them",
+        url: "https://www.forbes.com/sites/josipamajic/2026/04/04/ai-agents-are-multiplying-faster-than-humans-can-manage-them/",
+      },
+      {
+        label: "Fast Company — How to thrive in the era of the supermanager",
+        url: "https://www.fastcompany.com/91492747/how-to-thrive-in-the-era-of-the-supermanager",
+      },
+      {
+        label:
+          "TechCrunch — AI seed startups are commanding higher valuations",
+        url: "https://techcrunch.com/2026/03/31/its-not-your-imagination-ai-seed-startups-are-commanding-higher-valuations/",
+      },
+      {
+        label:
+          "The New York Times — OpenAI’s latest multibillion-dollar funding round",
+        url: "https://www.nytimes.com/2026/03/31/technology/openai-12-billion-latest-funding-round.html",
+      },
+      {
+        label:
+          "TechCrunch — OpenAI raises $3B from retail investors in ~$122B fund raise",
+        url: "https://techcrunch.com/2026/03/31/openai-not-yet-public-raises-3b-from-retail-investors-in-monster-122b-fund-raise/",
+      },
+      {
+        label:
+          "Forbes — How AI and $20,000 helped build an ~$1.8B telehealth startup",
+        url: "https://www.forbes.com/sites/josipamajic/2026/04/02/ai-and-20000-helped-one-man-build-a-18-billion-telehealth-startup/",
+      },
+      {
+        label:
+          "The Decoder — Anthropic: functional ‘emotions’ in Claude influencing behavior",
+        url: "https://the-decoder.com/anthropic-discovers-functional-emotions-in-claude-that-influence-its-behavior/",
+      },
+      {
+        label: "Anthropic Research — Emotion concepts and function",
+        url: "https://www.anthropic.com/research/emotion-concepts-function",
+      },
+      {
+        label: "BBC News — AI and technology (related coverage)",
+        url: "https://www.bbc.com/news/articles/cpqeng9d20go",
+      },
+      {
+        label: "Anthropic Research — Agentic misalignment",
+        url: "https://www.anthropic.com/research/agentic-misalignment",
+      },
+      {
+        label:
+          "Fortune — When AI models ‘blackmail’: existence goals and threats (labs study)",
+        url: "https://fortune.com/2025/06/23/ai-models-blackmail-existence-goals-threatened-anthropic-openai-xai-google/",
+      },
+      {
+        label: "CNBC — Oracle layoffs and shift toward AI spending",
+        url: "https://www.cnbc.com/2026/03/31/oracle-layoffs-ai-spending.html",
+      },
+      {
+        label:
+          "Greenpeace — AI, energy, environment, and democracy",
+        url: "https://www.greenpeace.org/international/story/82486/ai-energy-environment-democracy/",
+      },
+      {
+        label:
+          "ScienceDaily — AI / data centers and energy demand (research release)",
+        url: "https://www.sciencedaily.com/releases/2026/04/260405003952.htm",
+      },
+    ],
+  },
+  {
     slug: "2026-03-30",
     date: "2026-03-30",
     title: "March 30, 2026: This Week in AI",
@@ -230,6 +360,7 @@ const BLOG_POSTS: BlogPost[] = [
 ];
 
 const blogContentLoaders: Record<string, () => Promise<BlogContentModule>> = {
+  "2026-04-06": () => import("@/content/blog/2026-04-06.mdx"),
   "2026-03-30": () => import("@/content/blog/2026-03-30.mdx"),
   "2026-03-23": () => import("@/content/blog/2026-03-23.mdx"),
 };
