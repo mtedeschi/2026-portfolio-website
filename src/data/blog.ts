@@ -127,7 +127,8 @@ const BLOG_POSTS: BlogPost[] = [
         url: "https://www.anthropic.com/research/emotion-concepts-function",
       },
       {
-        label: "BBC News — AI and technology (related coverage)",
+        label:
+          "BBC News — AI system resorts to blackmail if told it will be removed",
         url: "https://www.bbc.com/news/articles/cpqeng9d20go",
       },
       {
@@ -150,7 +151,7 @@ const BLOG_POSTS: BlogPost[] = [
       },
       {
         label:
-          "ScienceDaily — AI / data centers and energy demand (research release)",
+          "ScienceDaily — AI breakthrough cuts energy use by 100x while boosting accuracy (Tufts)",
         url: "https://www.sciencedaily.com/releases/2026/04/260405003952.htm",
       },
     ],
