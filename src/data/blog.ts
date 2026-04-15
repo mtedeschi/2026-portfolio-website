@@ -26,6 +26,102 @@ type BlogContentModule = {
 
 const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "2026-04-13",
+    date: "2026-04-13",
+    title: "April 13, 2026: This Week in AI",
+    summary:
+      "Move fast and break things, at whatever the cost. AI labs are pushing the limits of what they can deliver with little concern to the cost: mental health, to bias and behavior, and to cybersecurity.",
+    tags: ["Commerce", "Security", "Healthcare", "Mental health"],
+    image: "/images/insights/2026-03-23_thumb.jpg",
+    quickSummary:
+      "Move fast and break things, at whatever the cost. AI labs are pushing the limits of what they can deliver with little concern to the cost: mental health, to bias and behavior, and to cybersecurity.",
+    substackUrl:
+      "https://miketedeschi.substack.com/p/april-13-2026-this-week-in-ai",
+    sources: [
+      {
+        label:
+          "Reuters — U.S. House committee questions travel companies on AI pricing",
+        url: "https://www.reuters.com/world/us/us-house-committee-wants-travel-companies-answer-questions-use-ai-pricing-2026-03-05",
+      },
+      {
+        label: "New York Post — How AI pricing could harm retailers (survey context)",
+        url: "https://nypost.com/2026/02/12/tech/how-ai-pricing-could-harm-retailers/",
+      },
+      {
+        label: "New York Post — Meta rolls out new AI model",
+        url: "https://nypost.com/2026/04/09/business/meta-rolls-out-new-ai-model-in-latest-effort-to-catch-up-with-rivals",
+      },
+      {
+        label: "The New York Times — Meta Muse / Spark AI model",
+        url: "https://www.nytimes.com/2026/04/08/technology/meta-muse-spark-ai-model.html",
+      },
+      {
+        label: "Reuters — Meta deal with Broadcom for custom AI chips",
+        url: "https://www.reuters.com/business/meta-inks-deal-with-broadcom-custom-ai-chips-2026-04-14/",
+      },
+      {
+        label: "Anthropic — Project Glasswing",
+        url: "https://www.anthropic.com/glasswing",
+      },
+      {
+        label:
+          "PBS NewsHour — Anthropic’s powerful new AI model and high-tech risks",
+        url: "https://www.pbs.org/newshour/show/anthropics-powerful-new-ai-model-raises-concerns-about-high-tech-risks",
+      },
+      {
+        label: "NPR — Anthropic Project Glasswing / Mythos preview and cybersecurity",
+        url: "https://www.npr.org/2026/04/11/nx-s1-5778508/anthropic-project-glasswing-ai-cybersecurity-mythos-preview",
+      },
+      {
+        label: "The Economist — How dangerous is Mythos?",
+        url: "https://www.economist.com/business/2026/04/08/how-dangerous-is-mythos-anthropics-new-ai-model",
+      },
+      {
+        label:
+          "The New York Times — Anthropic Claude Mythos preview and banks",
+        url: "https://www.nytimes.com/2026/04/10/business/anthropic-claude-mythos-preview-banks.html",
+      },
+      {
+        label: "The Hill — Anthropic new AI and public access debate",
+        url: "https://thehill.com/policy/technology/5824219-anthropic-new-ai-dangerous-public/",
+      },
+      {
+        label:
+          "The Washington Post (Opinion) — AI robots and senior care tradeoffs",
+        url: "https://www.washingtonpost.com/opinions/2026/04/09/ai-robot-senior-care-abi/",
+      },
+      {
+        label: "CNBC — Novo Nordisk and OpenAI for drug discovery",
+        url: "https://www.cnbc.com/2026/04/14/novo-nordisk-openai-ai-drug-discovery-healthcare-nvo.html",
+      },
+      {
+        label: "The New York Times — AI chatbots and cancer patients",
+        url: "https://www.nytimes.com/2026/04/13/well/ai-chatbots-cancer.html",
+      },
+      {
+        label: "The Free Press — Personal account: AI during a loved one’s illness",
+        url: "https://www.thefp.com/p/i-used-ai-to-fight-my-girlfriends-tumor",
+      },
+      {
+        label: "The New Stack — Karpathy on “AI psychosis”",
+        url: "https://thenewstack.io/karpathy-says-developers-have-ai-psychosis-everyone-else-is-next/",
+      },
+      {
+        label: "The Guardian — Experiment with AI journaling",
+        url: "https://www.theguardian.com/technology/2026/apr/12/experiment-with-ai-journalling",
+      },
+      {
+        label: "NPR — AI, mental health, and JAMA Psychiatry research",
+        url: "https://www.npr.org/2026/04/10/nx-s1-5780796/artificial-intelligence-ai-mental-health-chatgpt-jama-psychiatry",
+      },
+      {
+        label:
+          "MIT Technology Review — Current state of AI (charts and analysis)",
+        url: "https://www.technologyreview.com/2026/04/13/1135675/want-to-understand-the-current-state-of-ai-check-out-these-charts/",
+      },
+    ],
+  },
+  {
     slug: "2026-04-06",
     date: "2026-04-06",
     title: "April 6, 2026: This Week in AI",
@@ -361,6 +457,7 @@ const BLOG_POSTS: BlogPost[] = [
 ];
 
 const blogContentLoaders: Record<string, () => Promise<BlogContentModule>> = {
+  "2026-04-13": () => import("@/content/blog/2026-04-13.mdx"),
   "2026-04-06": () => import("@/content/blog/2026-04-06.mdx"),
   "2026-03-30": () => import("@/content/blog/2026-03-30.mdx"),
   "2026-03-23": () => import("@/content/blog/2026-03-23.mdx"),
