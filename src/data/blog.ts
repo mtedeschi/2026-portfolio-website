@@ -26,6 +26,87 @@ type BlogContentModule = {
 
 const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "2026-04-21",
+    date: "2026-04-21",
+    title: "April 21, 2026: This Week in AI",
+    summary:
+      "From Adobe Summit: AI is as much about replace vs. augment as it is about features—impacting collaboration, accountability, and design.",
+    tags: ["Collaboration", "Design", "Augmentation", "Enterprise"],
+    image: "/images/insights/2026-04-06_thumb.jpg",
+    quickSummary:
+      "This week: how AI helps or hurts teaming and judgment, why augmentation wins on paper but automation pressure persists, and why Claude Design and similar tools commoditize execution while raising the bar for real design craft.",
+    substackUrl:
+      "https://miketedeschi.substack.com/p/april-21-2026-this-week-in-ai",
+    sources: [
+      {
+        label:
+          "Fast Company — How to use AI to strengthen teams instead of destroying them",
+        url: "https://www.fastcompany.com/91523088/how-to-use-ai-to-strengthen-teams-instead-of-destroying-them",
+      },
+      {
+        label: "The Block — Coinbase tests AI agents",
+        url: "https://www.theblock.co/post/398038/coinbase-tests-ai-agents",
+      },
+      {
+        label:
+          "Harvard Business Review — AI augmentation vs. automation in the long run",
+        url: "https://hbr.org/2026/04/why-companies-that-choose-ai-augmentation-over-automation-may-win-in-the-long-run",
+      },
+      {
+        label:
+          "The New York Times — How jagged intelligence can reframe the AI debate",
+        url: "https://www.nytimes.com/2026/04/15/technology/how-jagged-intelligence-can-reframe-the-ai-debate.html",
+      },
+      {
+        label: "arXiv — The AI Layoff Trap (2603.20617)",
+        url: "https://arxiv.org/abs/2603.20617",
+      },
+      {
+        label: "Synvoya — AI boiling frog cognition study",
+        url: "https://synvoya.com/blog/2026-04-20-ai-boiling-frog-cognition-study/",
+      },
+      {
+        label:
+          "arXiv — Performance after short AI use and removal (2604.04721)",
+        url: "https://arxiv.org/html/2604.04721v2",
+      },
+      {
+        label: "aphyr — The future of everything is lies I guess (new jobs)",
+        url: "https://aphyr.com/posts/419-the-future-of-everything-is-lies-i-guess-new-jobs",
+      },
+      {
+        label: "BetterUp — Pilots, passengers, and AI power users",
+        url: "https://grow.betterup.com/pilots-passengers",
+      },
+      {
+        label: "Anthropic — Claude Design (Anthropic Labs)",
+        url: "https://www.anthropic.com/news/claude-design-anthropic-labs",
+      },
+      {
+        label: "Canva — Canva Create 2026 and AI",
+        url: "https://www.canva.com/newsroom/news/canva-create-2026-ai",
+      },
+      {
+        label:
+          "Fortune — CEOs, AI productivity, and why many see limited impact",
+        url: "https://fortune.com/article/why-do-thousands-of-ceos-believe-ai-not-having-impact-productivity-employment-study/",
+      },
+      {
+        label:
+          "The Wall Street Journal — Straight talk on AI and job losses (CEO profile)",
+        url: "https://www.wsj.com/tech/ai/the-ceo-preaching-straight-talk-about-ai-and-job-losses-a3aaaaf1",
+      },
+      {
+        label: "Inc. — Verizon CEO on AI and jobs",
+        url: "https://www.inc.com/kevin-haynes/verizon-ceo-ai-is-coming-for-your-job-and-everyone-knows-it/91333101",
+      },
+      {
+        label: "Adobe — CX enterprise coworker",
+        url: "https://news.adobe.com/news/2026/04/adobe-unveils-cx-enterprise-coworker",
+      },
+    ],
+  },
+  {
     slug: "2026-04-13",
     date: "2026-04-13",
     title: "April 13, 2026: This Week in AI",
@@ -457,6 +538,7 @@ const BLOG_POSTS: BlogPost[] = [
 ];
 
 const blogContentLoaders: Record<string, () => Promise<BlogContentModule>> = {
+  "2026-04-21": () => import("@/content/blog/2026-04-21.mdx"),
   "2026-04-13": () => import("@/content/blog/2026-04-13.mdx"),
   "2026-04-06": () => import("@/content/blog/2026-04-06.mdx"),
   "2026-03-30": () => import("@/content/blog/2026-03-30.mdx"),
